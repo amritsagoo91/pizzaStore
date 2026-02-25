@@ -1,0 +1,12 @@
+﻿@model List<RoleVM>;
+
+<label>
+
+</label>
+<select>
+    <option value="">Click to Show all roles</option>
+    @foreach(var role in Model)
+    {
+        <option value="@role.Name">@role.Name</option>
+    }
+</select>

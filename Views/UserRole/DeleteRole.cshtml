@@ -1,0 +1,27 @@
+﻿@model List<RoleVM>;
+
+
+<table>
+    <thead>
+        <tr>
+            <td>
+                Role Name
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var role in Model)
+        {
+            <tr>
+                <td>@role.Name</td>
+                <td>
+                    <form method="post" asp-action="DeleteRole">
+                        <input type="hidden" value="@role.Name" name="name"/>
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
