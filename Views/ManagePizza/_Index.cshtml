@@ -1,0 +1,35 @@
+@model IEnumerable<PizzaStore.Models.Pizza>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img src="~/images/default.jpg" alt="@item.Name" width="200" height="200">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    <p class="card-text">
+                        <strong>Price:</strong> @Html.DisplayFor(modelItem => item.Price)<br/>
+                        <strong>Size:</strong> @Html.DisplayFor(modelItem => item.Size)
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

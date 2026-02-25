@@ -11,7 +11,7 @@ using PizzaStore.Data;
 namespace PizzaStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260224225800_initcreate")]
+    [Migration("20260225040255_initcreate")]
     partial class initcreate
     {
         /// <inheritdoc />
