@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Assign Role";
+}
+
+<form method="post" asp-action="CreateUserRole">
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label>User Email</label>
+        <select name="email" asp-items="ViewBag.Users" class="form-control">
+            <option value="">-- Select User --</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Role</label>
+        <select name="roleName" asp-items="ViewBag.Roles" class="form-control">
+            <option value="">-- Select Role --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Assign Role</button>
+</form>

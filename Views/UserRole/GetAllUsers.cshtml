@@ -1,0 +1,27 @@
+﻿@model List<UserRoleVM>;
+
+
+<table>
+    <thead>
+        <tr>
+            <td>
+                User Email
+            </td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.Email</td>
+                <td>
+                    <form method="post" asp-action="GetUserRoles">
+                        <input type="hidden" value="@role.Email" name="email" />
+                        <button type="submit">User Roles</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

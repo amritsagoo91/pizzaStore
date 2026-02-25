@@ -1,0 +1,8 @@
+﻿@model RoleVM;
+
+<form method="post" asp-action="CreateRole">
+    <input type="text" asp-for="Name" />
+    <input type="submit" />
+</form>
+
+<a asp-action="AllRoles" asp-controller="UserRole">Go Back</a>
